@@ -1,64 +1,58 @@
 $(document).ready(function() {
   // MODAL
   var modalText = {
-    discover: {
-      title: 'ChowNow Discover',
-      tag: 'FOOD ORDERING PLATFORM.',
+    tracer: {
+      title: 'MTSC Tracer',
+      tag: 'Temperature Tracking System.',
       detail:
-        'ChowNow Discover is a platform that lets customers discover new local restaurants and provides business owners with tools to convert first time orders into lifelong diners.',
-      link: 'https://eat.chownow.com/'
+        'MTSC Tracer is a system with social login that integrate with firebase for user to key in their temperature in easy way',
+      link: 'https://tracer.mtsc-solution.com/'
     },
-    ordering: {
-      title: 'ChowNow Ordering Web',
-      tag: 'WHITE-LABEL ONLINE ORDERING SOLUTION.',
+    dpein: {
+      title: 'DPEIN.org',
+      tag: 'Administration System For NGO.',
       detail:
-        'ChowNow is a commission-free online ordering system and food ordering app helping restaurants feed their hungry customers.',
-      link: 'https://direct.chownow.com/direct/195/locations/260'
+        'DPEIN.org is a administration platform for organizing membership within Non-Government Organization like DPEIN.',
+      link: 'https://dpein.org'
     },
-    newrelic: {
-      title: 'NewRelic.com',
-      tag: 'APPLICATION PERFORMANCE MONITORING.',
+    gandaprint: {
+      title: 'empayar.co/gandabiz',
+      tag: 'Printing E-Commerce Platform.',
       detail:
-        'Roambi provides analytics, reporting, and business intelligence for companies to use on the go. A Wordpress hosted site written in PHP and Javascript with Hubspot Integration.',
-      link: 'http://www.newrelic.com'
+        'Gandabiz is company with involve in printing industry.This is application to showcase their product include with e-commerce integration',
+      link: 'https://empayar.co/gandabiz'
     },
-    roambi: {
-      title: 'Roambi.com',
-      tag: 'BUSINESS ANALYTICS.',
+    invoicemudah: {
+      title: 'Invoicemudah',
+      tag: 'Invoice/Accounting System.',
       detail:
-        'Roambi provides analytics, reporting, and business intelligence for companies to use on the go. A Wordpress hosted site written in PHP and Javascript with Hubspot Integration.',
-      link: 'http://www.roambi.com'
+        'Invoicemudah is a web application with mobile apps ready for freelance and small business to fasten process of generating invoice/quotation',
+      link: 'https://invoice.empayar.co'
     },
-    walker: {
-      title: 'WalkerTracker',
-      tag: 'PERFORMANCE METRICS.',
+    haltsys: {
+      title: 'Jabil Halt System',
+      tag: 'Automation.',
       detail:
-        'Walker Tracker offers goal management, fitness tracking, and team competitions to companies for internal use. A Ruby on Rails and Javascript companion site for the Walker Tracker App. Features visual metrics and gamified progression system.'
+        'Conveyor auto halt system to minimize escapee from production line. Use python with microcontroller to trigger using wifi '
     },
-    powur: {
-      title: 'Powur.com',
-      tag: 'CONSUMER POWERED MARKETING.',
+    ict: {
+      title: 'ICT Data Analysis Dashboard',
+      tag: 'Data Analysis.',
       detail:
-        'Powur is a marketing platform for lead generation, recruitment, and team building. Built with Ruby on Rails and Angular-UI. Makes use of Angular-material for front-end visuals. Features complex user tree heiarchy and commission system.',
-      link: 'http://www.powur.com/with/42'
+        'Use data analysis tools V-one to integrate Board Tester in production line and generate data analysis dashboard consist of Output Yield.'
     },
-    mystand: {
-      title: 'MyStand',
-      tag: 'CROWD-FUNDED CHARITY.',
+    bertamlivery: {
+      title: 'Bertamlivery.com',
+      tag: 'Food Delivery Platform.',
       detail:
-        'MyStand is a crowd-funding, media sharing website, that has you donating actions instead of money out of your pocket. Single page App built with Node.js on Sails and Angular 2.0. Features social media sharing and large scale crowd-funding.'
+        'Bertamlivery is a mobile and web platform for food delivery system.',
+      link: 'https://bertamlivery.com'
     },
-    never: {
-      title: 'NeverSurrender',
-      tag: 'ALS AWARENESS.',
+    diabetic: {
+      title: 'Diabetic Retinopathy Monitoring',
+      tag: 'Image processing system.',
       detail:
-        'NeverSurrender is a platform for the new ALS foundation mobile app in hopes to raise awareness and research funding to fight ALS. Pure JavaScript marketing site to promote the new ALS NeverSurrender app.'
-    },
-    themall: {
-      title: 'The Mall',
-      tag: 'PEER GUIDED SHOPPING.',
-      detail:
-        'The Mall is a place to follow the latest fashion purchases of your friends and favorite celebrities. Built with Node.js and Handlebars. Features the ability to import thousands of top brands products into one shopping site.'
+        'Diabetic Retinopathy Monitoring and Grading System is an image processing tools develop using matlab to analyse and grading image from patient'
     }
   };
 
@@ -160,7 +154,7 @@ $(document).ready(function() {
     $.each($('#modal .slide'), function(index, value) {
       $(this).css({
         background:
-          "url('img/slides/" + id + '-' + index + ".jpg') center center/cover",
+          "url('img/slides/" + id + '-' + index + ".png') center center/cover",
         backgroundSize: 'cover'
       });
     });

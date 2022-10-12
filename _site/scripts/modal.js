@@ -1,19 +1,19 @@
 $(document).ready(function() {
   // MODAL
   var modalText = {
-    tracer: {
-      title: 'MTSC Tracer',
-      tag: 'Temperature Tracking System.',
+    dahderma: {
+      title: 'DahDerma.my',
+      tag: 'Donation and volunteering platform for NGO.',
       detail:
-        'MTSC Tracer is a system with social login that integrate with firebase for user to key in their temperature in easy way',
-      link: 'https://tracer.mtsc-solution.com/'
+        'DahDerma is your one-stop platform to act on any noble causes that you care about. Champion a noble cause by fundraising or reach out for volunteers.',
+      link: 'https://dahderma.my'
     },
-    dpein: {
-      title: 'DPEIN.org',
-      tag: 'Administration System For NGO.',
+    dashboard: {
+      title: 'Penang2030 Dashboard',
+      tag: 'Dashboard for Penang 2030',
       detail:
-        'DPEIN.org is a administration platform for organizing membership within Non-Government Organization like DPEIN.',
-      link: 'https://dpein.org'
+        'Dashboard to measure Penang 2030 digital transformation',
+      link: 'https://dashboard.penang2030.com/'
     },
     gandaprint: {
       title: 'empayar.co/gandabiz',
@@ -41,12 +41,12 @@ $(document).ready(function() {
       detail:
         'Use data analysis tools V-one to integrate Board Tester in production line and generate data analysis dashboard consist of Output Yield.'
     },
-    bertamlivery: {
-      title: 'Bertamlivery.com',
-      tag: 'Food Delivery Platform.',
+    tracer: {
+      title: 'MTSC Tracer',
+      tag: 'Temperature Tracking System.',
       detail:
-        'Bertamlivery is a mobile and web platform for food delivery system.',
-      link: 'https://bertamlivery.com'
+        'MTSC Tracer is a system with social login that integrate with firebase for user to key in their temperature in easy way',
+      link: 'https://tracer.mtsc-solution.com/'
     },
     diabetic: {
       title: 'Diabetic Retinopathy Monitoring',

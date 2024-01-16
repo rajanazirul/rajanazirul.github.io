@@ -1162,7 +1162,7 @@ footer .footnote .highlight {
     min-width: 500px;
   }
 }
-/* @media screen and (min-width: 960px) {
+@media screen and (min-width: 960px) {
   .waypoint {
     opacity: 0;
   }
@@ -1288,4 +1288,12 @@ footer .footnote .highlight {
   }
 } */
 
-/*# sourceMappingURL=style.css.map */
+.row {
+  /* Add your styles here */
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/*# sourceMappingURL=style.css.map

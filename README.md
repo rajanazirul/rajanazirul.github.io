@@ -21,3 +21,8 @@ Add humor
 DL my resume Link
 Navbar border hue animation
 Make Canvas subtly interactive
+
+
+# Run locally
+run bundle install
+run bundle exec jekyll serve

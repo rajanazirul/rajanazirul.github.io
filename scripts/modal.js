@@ -53,6 +53,13 @@ $(document).ready(function() {
       tag: 'Image processing system.',
       detail:
         'Diabetic Retinopathy Monitoring and Grading System is an image processing tools develop using matlab to analyse and grading image from patient'
+    },
+    pacer: {
+      title: 'Pacer Sleep Cycle',
+      tag: 'IOS/Android App.',
+      detail:
+        'Pacer sleep cycle is an app that use to monitor your sleep cycle and wake you up at the best time in your sleep cycle',
+      link: 'https://pacer.gg'
     }
   };
 

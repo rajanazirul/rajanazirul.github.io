@@ -514,19 +514,28 @@ nav {
   .close {
     bottom: auto;
     top: 15px;
-    color: rgba(255, 255, 255, 0.8);
+    color: #fff;
     cursor: pointer;
-    font-size: 24pt;
-    font-weight: 800;
     position: absolute;
     right: 15px;
     z-index: 10;
     transition: all 0.3s ease;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+
+    &::before {
+      font-size: 20px;
+      line-height: 36px;
+    }
 
     &:hover {
-      color: $secondary;
-      transform: rotate(90deg);
+      color: #fff;
+      background: $secondary;
+      transform: scale(1.1);
     }
   }
 
@@ -1499,7 +1508,8 @@ footer {
     }
 
     .close {
-      right: 25px;
+      right: 20px;
+      top: 20px;
     }
 
     .button {

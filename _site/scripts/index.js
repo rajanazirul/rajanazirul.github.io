@@ -104,7 +104,7 @@ $(function() {
     );
   });
 
-  $('.mdi-menu').click(function() {
+  $('.nav-toggle').click(function() {
     $('.link-wrap').toggleClass('visible');
   });
 

@@ -1,3 +1,5 @@
+---
+---
 $primary: #04c2c9;
 $primary-dark: #00a1a7;
 $primary-darker: #036367;
@@ -339,12 +341,15 @@ body {
 // NAV
 nav {
   @include pos($left: 0, $bottom: 0);
-  background: $primary-darkest;
+  background: rgba($primary-darkest, 0.95);
+  backdrop-filter: blur(10px);
   border-bottom: 3px solid $primary;
-  height: 50px;
-  text-align: left;
+  height: 60px;
   width: 100%;
   z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &.fixed {
     @include pos($pos: fixed, $top: 0, $bottom: inherit, $left: 0);
@@ -354,41 +359,50 @@ nav {
   }
 
   .link-wrap {
-    background: #333;
+    background: rgba(30, 30, 30, 0.98);
     height: 0;
-    max-width: 1200px;
     overflow: hidden;
     position: absolute;
-    top: 53px;
+    top: 63px;
+    left: 0;
     transition: height 0.3s ease-out;
     width: 100%;
 
     &.visible {
-      height: 220px;
+      height: 240px;
     }
 
-    div {
-      &:first-child {
-        padding: 25px 20px 12px 20px;
-      }
+    a {
+      display: block;
       cursor: pointer;
-      font-size: 12pt;
-      padding: 12px 20px;
+      font-size: 14pt;
+      font-weight: 500;
+      letter-spacing: 2px;
+      padding: 18px 25px;
       text-transform: uppercase;
-      transition: color 0.5s;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
       &:hover {
         color: $secondary;
+        background: rgba($primary, 0.1);
+        padding-left: 35px;
       }
     }
   }
 
   .mdi-menu {
-    font-size: 30pt;
-    line-height: 36pt;
-    margin: auto 0;
+    color: #fff;
+    font-size: 28pt;
+    line-height: 60px;
     position: absolute;
-    right: 5vw;
+    right: 20px;
     top: 0;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $primary;
+    }
   }
 
   .active {
@@ -403,9 +417,10 @@ nav {
 }
 
 .window {
-  background: #222;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   overflow: hidden;
   position: relative;
+  border-radius: 8px 8px 0 0;
 }
 
 #carousel {
@@ -421,26 +436,35 @@ nav {
   float: left;
   height: 250px;
   justify-content: center;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 
 .mdi-chevron-left,
 .mdi-chevron-right {
-  background: rgba(0, 0, 0, 0.3);
-  bottom: 0;
+  background: rgba(27, 36, 47, 0.7);
+  bottom: 50%;
+  transform: translateY(50%);
   color: #fff;
   cursor: pointer;
-  cursor: pointer;
-  font-size: 14pt !important;
+  font-size: 18pt !important;
   font-weight: bold;
-  padding: 10px 15px;
+  padding: 15px 12px;
   position: absolute;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $primary;
+  }
 }
 
 .mdi-chevron-left {
-  left: 0;
+  left: 10px;
 }
 .mdi-chevron-right {
-  right: 0;
+  right: 10px;
 }
 
 .transition {
@@ -456,7 +480,8 @@ nav {
   z-index: 100;
 
   .mask {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
     height: 100%;
     left: 0;
     opacity: 0;
@@ -469,76 +494,95 @@ nav {
   .modal {
     align-items: flex-start;
     background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
     color: #333;
     height: 100vh;
     opacity: 0;
     position: relative;
     text-align: left;
-    transform: scale(0.8);
-    transition: all 0.3s;
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 12px;
+    overflow: hidden;
   }
 
   .close {
-    bottom: 25px;
-    color: #bbb;
+    bottom: auto;
+    top: 15px;
+    color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
-    font-size: 20pt;
+    font-size: 24pt;
     font-weight: 800;
     position: absolute;
-    right: 10px;
+    right: 15px;
+    z-index: 10;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      color: $secondary;
+      transform: rotate(90deg);
+    }
   }
 
   .info-box {
-    border-top: 3px solid $primary-darkest;
+    border-top: 4px solid $primary;
     box-sizing: border-box;
     color: #444;
-    padding: 15px 10px 85px 10px;
+    padding: 20px 15px 90px 15px;
+    background: #fff;
   }
 
   .title {
     font-family: 'Raleway-bold';
-    font-size: 16pt;
-    line-height: 20pt;
+    font-size: 18pt;
+    line-height: 24pt;
+    color: $primary-darkest;
   }
 
   .tag {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    color: #c0c0c0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    color: $primary;
     display: block;
-    font-family: 'Raleway-bold';
-    font-size: 8pt;
-    font-weight: 300;
+    font-family: 'Raleway-semibold';
+    font-size: 9pt;
+    font-weight: 500;
     padding-bottom: 15px;
+    margin-top: 5px;
   }
 
   .detail {
-    font-size: 9pt;
-    line-height: 14pt;
-    margin-top: 13px;
+    font-size: 10pt;
+    line-height: 18pt;
+    margin-top: 15px;
+    color: #666;
   }
 
   .mdi-open-in-new {
-    font-size: 11pt;
-    left: -10px;
+    font-size: 12pt;
+    margin-right: 8px;
     position: relative;
+    left: 0;
   }
 
   .button {
     background: $secondary;
     border: 0;
-    bottom: 20px;
+    bottom: 25px;
     color: #fff;
     cursor: pointer;
-    font-size: 10pt;
+    font-size: 11pt;
     font-weight: 600;
-    left: 10px;
-    padding: 11px 30px;
+    left: 15px;
+    padding: 14px 35px;
     pointer-events: none;
     position: absolute;
-    transition: all 0.5s;
+    transition: all 0.3s ease;
     visibility: hidden;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(227, 27, 109, 0.3);
 
     &.visible {
       pointer-events: initial;
@@ -546,8 +590,9 @@ nav {
     }
 
     &:hover {
-      background: #fff;
-      color: $secondary;
+      background: darken($secondary, 8%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(227, 27, 109, 0.4);
     }
   }
 
@@ -559,7 +604,7 @@ nav {
     pointer-events: initial;
     .modal {
       opacity: 1;
-      transform: scale(1);
+      transform: scale(1) translateY(0);
     }
     .mask {
       opacity: 1;
@@ -584,7 +629,7 @@ section {
   //HOME
   &:nth-of-type(1) {
     color: #fff;
-    height: calc(100vh + 53px);
+    height: calc(100vh + 70px);
     padding: 0 10px;
 
     .highlight {
@@ -607,7 +652,7 @@ section {
     }
 
     .button {
-      margin-bottom: 53px;
+      margin-bottom: 70px;
       padding: 12px 40px 12px 15px;
       position: relative;
 
@@ -780,43 +825,85 @@ section {
     }
 
     #gallery {
-      margin: 20px 0;
+      margin: 30px 0;
+      gap: 20px;
+      justify-content: center;
 
       .text,
       .button {
-        color: $primary-darkest;
+        color: #fff;
         opacity: 0;
         text-align: center;
-        transition: all 0.3s ease-in-out;
-        z-index: 2;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 3;
 
         .bold {
-          font-size: 16pt;
+          font-size: 15pt;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          margin-bottom: 8px;
+        }
+
+        .highlight {
+          color: $primary;
+          font-size: 9pt;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
       }
 
       .button {
         @include pos($bottom: 0, $left: 0, $right: 0);
+        background: $secondary;
         border: 2px solid $secondary;
-        font-size: 13pt;
+        color: #fff;
+        font-size: 11pt;
+        font-weight: 600;
         margin: 0 auto;
-        padding: 7px 0;
-        width: 170px;
+        padding: 10px 0;
+        width: 160px;
+        letter-spacing: 1px;
+
+        &:hover {
+          background: #fff;
+          color: $secondary;
+          transform: translateY(-2px);
+        }
       }
 
       .mix {
         display: none;
         position: relative;
+        margin: 5px;
+
+        // Inner container for proper layering
+        > div {
+          position: relative;
+          overflow: hidden;
+          border-radius: 8px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+              180deg,
+              transparent 0%,
+              transparent 40%,
+              rgba(27, 36, 47, 0.85) 100%
+            );
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+            pointer-events: none;
+          }
+        }
 
         .waypoint {
           background: #fff;
-        }
-
-        .button {
-          &:hover {
-            background: $secondary;
-            color: #fff;
-          }
         }
 
         @for $i from 1 through 12 {
@@ -828,29 +915,56 @@ section {
         }
 
         .card {
-          height: 240px;
+          height: 260px;
           max-width: 100%;
-          transition: opacity 0.5s;
-          width: calc(50vw - 8px);
+          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          width: calc(50vw - 20px);
+          border-radius: 8px;
         }
 
         &:hover {
+          > div {
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+
+            &::before {
+              opacity: 1;
+            }
+          }
+
           .card {
-            opacity: 0;
+            transform: scale(1.05);
           }
 
           .text {
             cursor: default;
             opacity: 1;
-            top: 24%;
+            top: 28%;
           }
 
           .button {
-            bottom: 24%;
+            bottom: 18%;
             opacity: 1;
           }
         }
       }
+    }
+
+    // Project type badge styling
+    .project-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: $primary;
+      color: #fff;
+      font-size: 8pt;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      z-index: 4;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(4, 194, 201, 0.3);
     }
   }
 
@@ -1109,8 +1223,19 @@ footer {
 // BREAKS
 @media screen and (max-width: 400px) {
   section:nth-of-type(3) {
-    #gallery .mix .card {
-      width: 100vw;
+    #gallery {
+      .mix {
+        margin: 8px;
+
+        .card {
+          width: calc(100vw - 32px);
+          height: 220px;
+        }
+
+        > div {
+          border-radius: 12px;
+        }
+      }
     }
   }
 }
@@ -1185,25 +1310,56 @@ footer {
   }
 
   nav {
+    height: 70px;
+
     .link-wrap {
       background: none;
       height: initial;
       overflow: visible;
-      position: initial;
-      text-align: left;
+      position: static;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      width: 100%;
+      max-width: 900px;
 
-      .visible {
-        height: initial;
-      }
+      a {
+        display: inline-block;
+        flex: 1;
+        text-align: center;
+        font-size: 11pt;
+        font-weight: 600;
+        letter-spacing: 3px;
+        padding: 24px 20px;
+        border-bottom: none;
+        position: relative;
 
-      div {
-        &:first-child {
-          padding: 0;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 12px;
+          left: 50%;
+          transform: translateX(-50%) scaleX(0);
+          width: 30px;
+          height: 2px;
+          background: $secondary;
+          transition: transform 0.3s ease;
         }
-        display: inline;
-        font-size: initial;
-        margin: 0 20px;
-        padding: initial;
+
+        &:hover {
+          color: $secondary;
+          background: transparent;
+          padding-left: 20px;
+
+          &::after {
+            transform: translateX(-50%) scaleX(1);
+          }
+        }
+
+        &.active::after {
+          transform: translateX(-50%) scaleX(1);
+          background: $secondary;
+        }
       }
     }
 
@@ -1293,11 +1449,26 @@ footer {
       }
 
       #gallery {
+        gap: 25px;
+        padding: 0 20px;
+
         .mix {
+          margin: 0;
+
           .card {
-            height: 300px;
+            height: 280px;
+            width: 320px;
+          }
+
+          .text .bold {
+            font-size: 14pt;
           }
         }
+      }
+
+      .project-badge {
+        font-size: 7pt;
+        padding: 4px 10px;
       }
     }
 
@@ -1427,13 +1598,39 @@ footer {
     }
 
     &:nth-of-type(3) {
-      #gallery .mix .card {
-        width: 390px;
+      #gallery {
+        gap: 30px;
+        padding: 0 30px;
+        max-width: 1200px;
+        margin: 30px auto;
+
+        .mix {
+          .card {
+            width: 360px;
+            height: 260px;
+          }
+
+          .text .bold {
+            font-size: 16pt;
+          }
+
+          .button {
+            font-size: 12pt;
+            padding: 12px 0;
+            width: 170px;
+          }
+        }
       }
+
       .filter {
         font-size: 13pt;
         margin: 0 25px;
         padding: 0 40px;
+      }
+
+      .project-badge {
+        font-size: 8pt;
+        padding: 5px 12px;
       }
     }
 
@@ -1449,6 +1646,17 @@ footer {
 
 @media screen and (min-width: 1280px) {
   section {
+    &:nth-of-type(3) {
+      #gallery {
+        gap: 35px;
+
+        .mix .card {
+          width: 380px;
+          height: 280px;
+        }
+      }
+    }
+
     &:nth-of-type(4) {
       .blog-wrap {
         margin: 0 0 50px 20px;

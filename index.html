@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Raja Nazirul</title>
+    <meta charset="UTF-8" />
+    <title>Raja Nazirul | Full-Stack Developer</title>
+    <meta name="description" content="Raja Nazirul - Full-Stack Developer specializing in Vue.js, React, Python, and Cloud Engineering. Based in Kuala Lumpur, Malaysia." />
+    <meta name="keywords" content="Full-Stack Developer, Vue.js, React, Python, Cloud Engineering, Malaysia" />
+    <meta name="author" content="Raja Nazirul" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
     />
+    <meta property="og:title" content="Raja Nazirul | Full-Stack Developer" />
+    <meta property="og:description" content="Full-Stack Developer specializing in Vue.js, React, Python, and Cloud Engineering." />
+    <meta property="og:type" content="website" />
 
     <!-- HOSTED -->
     <link
@@ -30,7 +37,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
 
     <!-- LOCAL -->
-    <!-- <script src="scripts/pt.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/williamngan/pt@master/dist/pt.min.js"></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/modal.js"></script>
     <script src="scripts/typing.js"></script>
@@ -49,8 +56,8 @@
                 <div class="slide"></div>
                 <div class="slide"></div>
               </div>
-              <i class="mdi mdi-chevron-left" id="prev"></i>
-              <i class="mdi mdi-chevron-right" id="next"></i>
+              <button class="mdi mdi-chevron-left" id="prev" aria-label="Previous slide"></button>
+              <button class="mdi mdi-chevron-right" id="next" aria-label="Next slide"></button>
             </div>
           </div>
           <div class="info-box">
@@ -63,7 +70,7 @@
               </div></a
             >
           </div>
-          <i class="close mdi mdi-close"></i>
+          <button class="close mdi mdi-close" aria-label="Close modal"></button>
         </div>
       </div>
 
@@ -83,15 +90,14 @@
             View my work <i class="mdi mdi-arrow-right"></i>
           </div>
 
-          <nav class="flex">
+          <nav class="flex" role="navigation" aria-label="Main navigation">
             <div class="link-wrap">
-              <div class="active page-link" dest="home">home</div>
-              <div class="page-link" dest="about">about</div>
-              <div class="page-link" dest="portfolio">portfolio</div>
-              <!-- <div class="page-link" dest="blog">blog</div> -->
-              <div class="page-link" dest="contact">contact</div>
+              <a class="active page-link" href="#home" dest="home">home</a>
+              <a class="page-link" href="#about" dest="about">about</a>
+              <a class="page-link" href="#portfolio" dest="portfolio">portfolio</a>
+              <a class="page-link" href="#contact" dest="contact">contact</a>
             </div>
-            <i class="mdi mdi-menu"></i>
+            <button class="mdi mdi-menu" aria-label="Toggle navigation menu" aria-expanded="false"></button>
           </nav>
         </div>
       </section>
@@ -184,7 +190,7 @@
               class="flex flex-50-gt-sm waypoint"
               data-animation="slide-in-left"
             >
-              <img src="img/me.png" class="me" />
+              <img src="img/me.png" class="me" alt="Raja Nazirul - Full Stack Developer" />
               <!-- <div><img class="up-arrow" src="img/up-arrow.png"></div> -->
               <div class="label bold">Who's this guy?</div>
               <div>
@@ -295,19 +301,19 @@
           data-delay=".3s"
         ></div>
 
-        <div class="filter-wrap waypoint" data-animation="fade-in">
+        <div class="filter-wrap waypoint" data-animation="fade-in" role="tablist" aria-label="Project categories">
           <div class="flex row">
-            <div class="filter" data-filter="all">ALL</div>
-            <div class="filter" data-filter=".react">Web Application</div>
-            <div class="filter" data-filter=".js">Engineering</div>
-            <div class="filter" data-filter=".api">API Application</div>
+            <button class="filter" data-filter="all" role="tab" aria-selected="true">ALL</button>
+            <button class="filter" data-filter=".react" role="tab">Web Application</button>
+            <button class="filter" data-filter=".js" role="tab">Engineering</button>
+            <button class="filter" data-filter=".api" role="tab">API Application</button>
           </div>
-          <div class="float-bar">
+          <div class="float-bar" aria-hidden="true">
             <div class="flex row">
-              <div class="filter" data-filter="all">ALL</div>
-              <div class="filter" data-filter=".react">Web Application</div>
-            <div class="filter" data-filter=".js">Engineering</div>
-            <div class="filter" data-filter=".js">API Application</div>
+              <span class="filter" data-filter="all">ALL</span>
+              <span class="filter" data-filter=".react">Web Application</span>
+              <span class="filter" data-filter=".js">Engineering</span>
+              <span class="filter" data-filter=".api">API Application</span>
             </div>
           </div>
         </div>
@@ -553,19 +559,27 @@
             data-animation="pop-in"
             data-delay=".5s"
             id="contact-form"
+            action="https://formspree.io/f/xpwzgkjl"
+            method="POST"
           >
             <div class="flex">
-            <input placeholder="Name" type="text" name="name" required />
+            <label for="contact-name" class="visually-hidden">Name</label>
+            <input id="contact-name" placeholder="Name" type="text" name="name" required autocomplete="name" />
+            <label for="contact-email" class="visually-hidden">Email</label>
             <input
+              id="contact-email"
               placeholder="Enter email"
               type="email"
               name="email"
               required
+              autocomplete="email"
             />
+            <label for="contact-message" class="visually-hidden">Message</label>
             <textarea
+              id="contact-message"
               placeholder="Your Message"
-              type="text"
               name="message"
+              required
             ></textarea>
             </div>
             <div id="success">
@@ -581,22 +595,22 @@
       </section>
 
       <footer>
-        <i class="mdi mdi-chevron-double-up page-link" dest="home"></i>
+        <button class="mdi mdi-chevron-double-up page-link" dest="home" aria-label="Back to top"></button>
 
         <div class="icon-wrap flex row">
-          <a href="https://www.linkedin.com/in/raja-nazirul-b0061496">
+          <a href="https://www.linkedin.com/in/raja-nazirul-b0061496" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer">
             <div class="flex icon" id="icon-2">
-              <i class="mdi mdi-linkedin"></i>
+              <i class="mdi mdi-linkedin" aria-hidden="true"></i>
             </div>
           </a>
-          <a href="https://www.facebook.com/people/Raja-Nazirul/1791640577">
+          <a href="https://www.facebook.com/people/Raja-Nazirul/1791640577" aria-label="Facebook Profile" target="_blank" rel="noopener noreferrer">
             <div class="flex icon" id="icon-3">
-              <i class="mdi mdi-facebook"></i>
+              <i class="mdi mdi-facebook" aria-hidden="true"></i>
             </div>
           </a>
-          <a href="https://www.instagram.com/raja.nazirul">
+          <a href="https://www.instagram.com/raja.nazirul" aria-label="Instagram Profile" target="_blank" rel="noopener noreferrer">
             <div class="flex icon" id="icon-4">
-              <i class="mdi mdi-instagram"></i>
+              <i class="mdi mdi-instagram" aria-hidden="true"></i>
             </div>
           </a>
           <!--<a href="http://codepen.io/matthewwilliams/">
@@ -607,16 +621,16 @@
         </div>
         <div class="info-box">
           <div class="footnote">
-            RAJA NAZIRUL <span class="highlight">&copy;2024</span>
+            RAJA NAZIRUL <span class="highlight">&copy;<script>document.write(new Date().getFullYear())</script></span>
           </div>
         </div>
       </footer>
     </div>
 
-    <div id="preload">
-      <img src="img/me.jpg" />
-      <img src="img/filler.jpg" />
-      <img src="img/filler.jpg" />
+    <div id="preload" aria-hidden="true">
+      <img src="img/me.jpg" alt="" />
+      <img src="img/filler.jpg" alt="" />
+      <img src="img/filler.jpg" alt="" />
       <img src="img/thumb-1.jpg" />
       <img src="img/thumb-2.jpg" />
       <img src="img/thumb-3.jpg" />
@@ -650,7 +664,6 @@
       <img src="img/slides/pacer-0.jpg" />
 
     </div>
+      <script src="scripts/canvas.js"></script>
   </body>
 </html>
-
-<script src="scripts/canvas.js"></script>

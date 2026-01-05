@@ -91,10 +91,10 @@ $(document).ready(function() {
     shiftSlide(1);
   });
 
-  carousel.on('mousedown', function() {
+  carousel.on('mousedown', function(event) {
     if (carousel.hasClass('transition')) return;
     dragStart = event.pageX;
-    $(this).on('mousemove', function() {
+    $(this).on('mousemove', function(event) {
       dragEnd = event.pageX;
       $(this).css('transform', 'translateX(' + dragPos() + 'px)');
     });
@@ -107,6 +107,13 @@ $(document).ready(function() {
       }
       shiftSlide(0);
     });
+  });
+
+  // Close modal with Escape key
+  $(document).on('keydown', function(event) {
+    if (event.key === 'Escape' && $('.modal-wrap').hasClass('visible')) {
+      $('.modal-wrap, #modal .button').removeClass('visible');
+    }
   });
 
   function setDimensions() {

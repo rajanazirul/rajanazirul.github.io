@@ -47,20 +47,22 @@ $(function() {
     }
 
     // Link Highlighting
-    if (pos2 > $('#home').offset().top) {
+    var $home = $('#home');
+    var $about = $('#about');
+    var $portfolio = $('#portfolio');
+    var $contact = $('#contact');
+
+    if ($home.length && pos2 > $home.offset().top) {
       highlightLink('home');
     }
-    if (pos2 > $('#about').offset().top) {
+    if ($about.length && pos2 > $about.offset().top) {
       highlightLink('about');
     }
-    if (pos2 > $('#portfolio').offset().top) {
+    if ($portfolio.length && pos2 > $portfolio.offset().top) {
       highlightLink('portfolio');
     }
-    if (pos2 > $('#blog').offset().top) {
-      highlightLink('blog');
-    }
     if (
-      pos2 > $('#contact').offset().top ||
+      ($contact.length && pos2 > $contact.offset().top) ||
       pos + $(window).height() === $(document).height()
     ) {
       highlightLink('contact');
@@ -182,17 +184,26 @@ $(function() {
   // CONTACT FORM
   $('#contact-form').submit(function(e) {
     e.preventDefault();
+    var $form = $(this);
+    var $submit = $form.find('input[type=submit]');
+
+    $submit.prop('disabled', true).val('SENDING...');
 
     $.ajax({
-      url: 'https://formspree.io/rajanazirul93@gmail.com',
+      url: $form.attr('action'),
       method: 'POST',
-      data: { message: $('form').serialize() },
+      data: $form.serialize(),
       dataType: 'json'
-    }).done(function(response) {
+    })
+    .done(function(response) {
       $('#success').addClass('expand');
-      $('#contact-form')
-        .find('input[type=text], input[type=email], textarea')
-        .val('');
+      $form.find('input[type=text], input[type=email], textarea').val('');
+    })
+    .fail(function(xhr, status, error) {
+      alert('Sorry, there was an error sending your message. Please try again or email directly.');
+    })
+    .always(function() {
+      $submit.prop('disabled', false).val('SUBMIT');
     });
   });
 

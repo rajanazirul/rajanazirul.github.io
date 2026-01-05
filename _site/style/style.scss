@@ -158,6 +158,45 @@ a {
   text-decoration: none;
 }
 
+// Accessibility: visually hidden but screen reader accessible
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+// Reset button styles for icon buttons
+button.mdi {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  &:focus {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+  }
+}
+
+// Filter buttons reset
+button.filter {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  &:focus {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+  }
+}
+
 body {
   color: #fff;
   font-family: 'Raleway';

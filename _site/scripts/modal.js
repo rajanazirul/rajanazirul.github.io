@@ -74,6 +74,13 @@ $(document).ready(function() {
       detail:
         'GPU-accelerated passport photo processing app that transforms casual photos into government-compliant passport photos using AI-powered face detection, background removal, and automatic cropping.',
       link: 'https://passportpro.app'
+    },
+    iopply: {
+      title: 'iopply',
+      tag: 'SaaS Dashboard Platform.',
+      detail:
+        'A modern Next.js 14 dashboard platform with Supabase authentication, Material-UI components, and comprehensive admin panel features including user management, analytics, and real-time capabilities.',
+      link: 'https://iopply.com'
     }
   };
 

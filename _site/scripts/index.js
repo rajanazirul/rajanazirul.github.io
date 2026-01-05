@@ -181,7 +181,10 @@ $(function() {
     onScrollInit($('.waypoint'));
   }, 10);
 
-  // CONTACT FORM
+  // CONTACT FORM - Supabase Edge Function
+  // TODO: Replace with your Supabase project URL
+  var SUPABASE_URL = 'https://YOUR_PROJECT_REF.supabase.co/functions/v1/send-email';
+
   $('#contact-form').submit(function(e) {
     e.preventDefault();
     var $form = $(this);
@@ -189,18 +192,34 @@ $(function() {
 
     $submit.prop('disabled', true).val('SENDING...');
 
+    var formData = {
+      name: $form.find('input[name="name"]').val(),
+      email: $form.find('input[name="email"]').val(),
+      message: $form.find('textarea[name="message"]').val()
+    };
+
     $.ajax({
-      url: $form.attr('action'),
+      url: SUPABASE_URL,
       method: 'POST',
-      data: $form.serialize(),
+      contentType: 'application/json',
+      data: JSON.stringify(formData),
       dataType: 'json'
     })
     .done(function(response) {
-      $('#success').addClass('expand');
-      $form.find('input[type=text], input[type=email], textarea').val('');
+      if (response.success) {
+        $('#success').addClass('expand');
+        $form.find('input[type=text], input[type=email], textarea').val('');
+      } else {
+        alert('Sorry, there was an error: ' + (response.error || 'Unknown error'));
+      }
     })
     .fail(function(xhr, status, error) {
-      alert('Sorry, there was an error sending your message. Please try again or email directly.');
+      var errorMsg = 'Sorry, there was an error sending your message.';
+      try {
+        var response = JSON.parse(xhr.responseText);
+        if (response.error) errorMsg = response.error;
+      } catch(e) {}
+      alert(errorMsg + ' Please try again or email directly.');
     })
     .always(function() {
       $submit.prop('disabled', false).val('SUBMIT');

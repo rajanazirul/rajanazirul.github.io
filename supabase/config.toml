@@ -1,0 +1,8 @@
+# Supabase Configuration for Portfolio Contact Form
+# See: https://supabase.com/docs/guides/functions
+
+[project]
+id = "your-project-ref"
+
+[functions.send-email]
+verify_jwt = false

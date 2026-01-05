@@ -713,6 +713,8 @@ section {
           background: url("../img/thumb-11.jpg") center center/cover; }
         section:nth-of-type(3) #gallery .mix:nth-child(12) .card {
           background: url("../img/thumb-12.jpg") center center/cover; }
+        section:nth-of-type(3) #gallery .mix:nth-child(13) .card {
+          background: #ffffff url("../img/thumb-dronai.png") center center/60% no-repeat; }
         section:nth-of-type(3) #gallery .mix .card {
           height: 260px;
           max-width: 100%;

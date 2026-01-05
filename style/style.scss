@@ -936,6 +936,12 @@ section {
           }
         }
 
+        &:nth-child(13) {
+          .card {
+            background: #ffffff url('../img/thumb-dronai.png') center center/60% no-repeat;
+          }
+        }
+
         .card {
           height: 260px;
           max-width: 100%;

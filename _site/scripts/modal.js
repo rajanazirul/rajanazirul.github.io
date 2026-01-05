@@ -82,6 +82,14 @@ $(document).ready(function() {
       detail:
         'A modern Next.js 14 dashboard platform with Supabase authentication, Material-UI components, and comprehensive admin panel features including user management, analytics, and real-time capabilities.',
       link: 'https://iopply.com'
+    },
+    dronai: {
+      title: 'Dronai',
+      tag: 'AI-Driven Infrastructure Inspection.',
+      detail:
+        'Dronai is an AI-based reporting tool for breakwater construction using drone technology. It provides data gathering via UAV, AI-powered anomaly detection, data labelling, and comprehensive reporting dashboards for construction site inspection.',
+      link: 'https://dronai.my',
+      imgExt: 'png'
     }
   };
 

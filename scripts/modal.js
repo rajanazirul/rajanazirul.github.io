@@ -60,6 +60,20 @@ $(document).ready(function() {
       detail:
         'Pacer sleep cycle is an app that use to monitor your sleep cycle and wake you up at the best time in your sleep cycle',
       link: 'https://pacer.gg'
+    },
+    tawbahpro: {
+      title: 'TawbahPro',
+      tag: 'Islamic Lifestyle App.',
+      detail:
+        'TawbahPro is an Islamic lifestyle app featuring prayer times with Malaysian JAKIM integration, habit tracking, Quran reading with bookmarks, and offline-first architecture for seamless experience anywhere.',
+      link: 'https://tawbahpro.com'
+    },
+    passportpro: {
+      title: 'PassportPro',
+      tag: 'AI Passport Photo App.',
+      detail:
+        'GPU-accelerated passport photo processing app that transforms casual photos into government-compliant passport photos using AI-powered face detection, background removal, and automatic cropping.',
+      link: 'https://passportpro.app'
     }
   };
 

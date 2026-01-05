@@ -15,12 +15,12 @@ $(document).ready(function() {
         'Dashboard to measure Penang 2030 digital transformation',
       link: 'https://dashboard.penang2030.com/'
     },
-    gandaprint: {
-      title: 'empayar.co/gandabiz',
-      tag: 'Printing E-Commerce Platform.',
+    jomboat: {
+      title: 'jomboat.com',
+      tag: 'Fishing Boat Booking Platform.',
       detail:
-        'Gandabiz is company with involve in printing industry.This is application to showcase their product include with e-commerce integration',
-      link: 'https://empayar.co/gandabiz'
+        'Jomboat is a fishing boat booking platform that allows users to book fishing boats for their fishing trips.',
+      link: 'https://jomboat.com'
     },
     invoicemudah: {
       title: 'Invoicemudah',

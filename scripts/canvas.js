@@ -29,6 +29,9 @@ function floatySpace() {
   // Canvas
   space.add({
     animate: function(time, fps, context) {
+      // Clear canvas with dark background
+      context.fillStyle = "#252934";
+      context.fillRect(0, 0, space.size.x, space.size.y);
 
       for (var i=0; i<pts.length; i++) {
         // rotate the points slowly

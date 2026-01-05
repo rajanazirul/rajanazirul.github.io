@@ -188,9 +188,12 @@ $(function() {
   $('#contact-form').submit(function(e) {
     e.preventDefault();
     var $form = $(this);
-    var $submit = $form.find('input[type=submit]');
+    var $submit = $form.find('.submit-btn');
+    var $submitText = $submit.find('span');
+    var originalText = $submitText.text();
 
-    $submit.prop('disabled', true).val('SENDING...');
+    $submit.prop('disabled', true);
+    $submitText.text('Sending...');
 
     var formData = {
       name: $form.find('input[name="name"]').val(),
@@ -222,7 +225,8 @@ $(function() {
       alert(errorMsg + ' Please try again or email directly.');
     })
     .always(function() {
-      $submit.prop('disabled', false).val('SUBMIT');
+      $submit.prop('disabled', false);
+      $submitText.text(originalText);
     });
   });
 

@@ -592,47 +592,89 @@
             data-delay=".25s"
           ></div>
           <div
-            class="highlight waypoint"
-            data-animation="slide-in-right"
-            data-delay=".5s"
+            class="subtitle waypoint"
+            data-animation="fade-in"
+            data-delay=".3s"
           >
             Have a question or want to work together?
           </div>
-          <div>
-            <form
-            class="waypoint"
-            data-animation="pop-in"
-            data-delay=".5s"
-            id="contact-form"
-          >
-            <div class="flex">
-            <label for="contact-name" class="visually-hidden">Name</label>
-            <input id="contact-name" placeholder="Name" type="text" name="name" required autocomplete="name" />
-            <label for="contact-email" class="visually-hidden">Email</label>
-            <input
-              id="contact-email"
-              placeholder="Enter email"
-              type="email"
-              name="email"
-              required
-              autocomplete="email"
-            />
-            <label for="contact-message" class="visually-hidden">Message</label>
-            <textarea
-              id="contact-message"
-              placeholder="Your Message"
-              name="message"
-              required
-            ></textarea>
-            </div>
-            <div id="success">
-              <div>
-                rajanazirul93@gmail.com<span
-                ></span>
+
+          <div class="contact-wrapper waypoint" data-animation="pop-in" data-delay=".5s">
+            <div class="contact-info">
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="mdi mdi-map-marker"></i>
+                </div>
+                <div class="info-content">
+                  <div class="info-label">Location</div>
+                  <div class="info-text">Kuala Lumpur, Malaysia</div>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="mdi mdi-email"></i>
+                </div>
+                <div class="info-content">
+                  <div class="info-label">Email</div>
+                  <a href="mailto:rajanazirul93@gmail.com" class="info-text">rajanazirul93@gmail.com</a>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="mdi mdi-linkedin"></i>
+                </div>
+                <div class="info-content">
+                  <div class="info-label">LinkedIn</div>
+                  <a href="https://www.linkedin.com/in/raja-nazirul-b0061496" target="_blank" rel="noopener noreferrer" class="info-text">raja-nazirul</a>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="mdi mdi-github-circle"></i>
+                </div>
+                <div class="info-content">
+                  <div class="info-label">GitHub</div>
+                  <a href="https://github.com/rajanazirul" target="_blank" rel="noopener noreferrer" class="info-text">rajanazirul</a>
+                </div>
               </div>
             </div>
-            <input class="button" type="submit" id="submit" value="SUBMIT" />
-          </form>
+
+            <div class="contact-form-wrap">
+              <form id="contact-form">
+                <div class="form-group">
+                  <label for="contact-name" class="visually-hidden">Name</label>
+                  <input id="contact-name" placeholder="Your Name" type="text" name="name" required autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label for="contact-email" class="visually-hidden">Email</label>
+                  <input
+                    id="contact-email"
+                    placeholder="Your Email"
+                    type="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="contact-message" class="visually-hidden">Message</label>
+                  <textarea
+                    id="contact-message"
+                    placeholder="Your Message"
+                    name="message"
+                    required
+                  ></textarea>
+                </div>
+                <div id="success">
+                  <i class="mdi mdi-check-circle"></i>
+                  <span>Message sent successfully!</span>
+                </div>
+                <button class="submit-btn" type="submit" id="submit">
+                  <span>Send Message</span>
+                  <i class="mdi mdi-send"></i>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -641,6 +683,11 @@
         <button class="mdi mdi-chevron-double-up page-link" dest="home" aria-label="Back to top"></button>
 
         <div class="icon-wrap flex row">
+          <a href="https://github.com/rajanazirul" aria-label="GitHub Profile" target="_blank" rel="noopener noreferrer">
+            <div class="flex icon" id="icon-1">
+              <i class="mdi mdi-github-circle" aria-hidden="true"></i>
+            </div>
+          </a>
           <a href="https://www.linkedin.com/in/raja-nazirul-b0061496" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer">
             <div class="flex icon" id="icon-2">
               <i class="mdi mdi-linkedin" aria-hidden="true"></i>
@@ -695,9 +742,8 @@
       <img src="img/slides/dashboard-0.jpg" />
       <img src="img/slides/dashboard-1.jpg" />
       <img src="img/slides/dashboard-2.jpg" />
-      <img src="img/slides/jomboat-0.jpg" />
-      <img src="img/slides/jomboat-1.jpg" />
-      <img src="img/slides/jomboat-2.jpg" />
+      <img src="img/slides/jomboat-0.png" />
+      <img src="img/slides/jomboat-1.png" />
       <img src="img/slides/tracer-0.jpg" />
       <img src="img/slides/tracer-1.jpg" />
       <img src="img/slides/tracer-2.jpg" />

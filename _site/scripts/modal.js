@@ -20,14 +20,15 @@ $(document).ready(function() {
       tag: 'Fishing Boat Booking Platform.',
       detail:
         'Jomboat is a fishing boat booking platform that allows users to book fishing boats for their fishing trips.',
-      link: 'https://jomboat.com'
+      link: 'https://jomboat.com',
+      imgExt: 'png'
     },
     invoicemudah: {
       title: 'Invoicemudah',
       tag: 'Invoice/Accounting System.',
       detail:
         'Invoicemudah is a web application with mobile apps ready for freelance and small business to fasten process of generating invoice/quotation',
-      link: 'https://invoice.empayar.co'
+      link: 'https://invoicemudah.com'
     },
     haltsys: {
       title: 'Jabil Halt System',
@@ -186,10 +187,11 @@ $(document).ready(function() {
     $.each($('#modal li'), function(index, value) {
       $(this).text(modalText[id].bullets[index]);
     });
+    var imgExt = modalText[id].imgExt || 'jpg';
     $.each($('#modal .slide'), function(index, value) {
       $(this).css({
         background:
-          "url('img/slides/" + id + '-' + index + ".jpg') center center/cover",
+          "url('img/slides/" + id + '-' + index + '.' + imgExt + "') center center/cover",
         backgroundSize: 'cover'
       });
     });

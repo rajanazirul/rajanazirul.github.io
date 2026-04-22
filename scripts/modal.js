@@ -87,22 +87,19 @@ $(document).ready(function() {
       title: 'Founder-Kit (CoreKit)',
       tag: 'AI-Ready SaaS Boilerplate (Next.js / Claude SDK / Supabase).',
       detail:
-        'Production-ready Next.js 14 + TypeScript monorepo with Supabase auth and RLS, Anthropic Claude SDK integration, BullMQ background workers on Upstash Redis, Resend transactional email, and Vercel deployment — everything an early-stage SaaS needs to ship with AI built in from day one.',
-      imgExt: 'png'
+        'Production-ready Next.js 14 + TypeScript monorepo with Supabase auth and RLS, Anthropic Claude SDK integration, BullMQ background workers on Upstash Redis, Resend transactional email, and Vercel deployment — everything an early-stage SaaS needs to ship with AI built in from day one.'
     },
     spms: {
       title: 'SPMS — SEED Programme Monitoring',
       tag: 'Enterprise Grant Monitoring Dashboard.',
       detail:
-        'Monitoring dashboard for the SEED Programme tracking project obligations, disbursements, Gantt timelines, and compliance across multiple sub-programmes. Built on React + Vite + MUI + Syncfusion with PDF report export, i18n, and Vercel deployment.',
-      imgExt: 'png'
+        'Monitoring dashboard for the SEED Programme tracking project obligations, disbursements, Gantt timelines, and compliance across multiple sub-programmes. Built on React + Vite + MUI + Syncfusion with PDF report export, i18n, and Vercel deployment.'
     },
     leadmio: {
       title: 'LeadMio',
       tag: 'AI WhatsApp Lead Qualification (DeepSeek / pgvector / Go).',
       detail:
-        'AI-powered WhatsApp CRM that qualifies and scores leads for Malaysian SMEs. Next.js frontend, four Go microservice workers (message, notification, qualification, scoring), PostgreSQL with pgvector for semantic search, DeepSeek LLM for conversational AI, and Ollama-served nomic-embed-text embeddings — packaged in Docker Compose for on-prem or cloud deploy.',
-      imgExt: 'png'
+        'AI-powered WhatsApp CRM that qualifies and scores leads for Malaysian SMEs. Next.js frontend, four Go microservice workers (message, notification, qualification, scoring), PostgreSQL with pgvector for semantic search, DeepSeek LLM for conversational AI, and Ollama-served nomic-embed-text embeddings — packaged in Docker Compose for on-prem or cloud deploy.'
     },
     dronai: {
       title: 'Dronai',

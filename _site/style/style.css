@@ -717,11 +717,11 @@ section {
         section:nth-of-type(3) #gallery .mix:nth-child(12) .card {
           background: url("../img/thumb-12.jpg") center center/cover; }
         section:nth-of-type(3) #gallery .mix:nth-child(13) .card {
-          background: url("../img/thumb-founderkit.png") center center/cover; }
+          background: url("../img/thumb-founderkit.jpg") center center/cover; }
         section:nth-of-type(3) #gallery .mix:nth-child(14) .card {
-          background: url("../img/thumb-spms.png") center center/cover; }
+          background: url("../img/thumb-spms.jpg") center center/cover; }
         section:nth-of-type(3) #gallery .mix:nth-child(15) .card {
-          background: url("../img/thumb-leadmio.png") center center/cover; }
+          background: url("../img/thumb-leadmio.jpg") center center/cover; }
         section:nth-of-type(3) #gallery .mix:nth-child(16) .card {
           background: #ffffff url("../img/thumb-dronai.png") center center/60% no-repeat; }
         section:nth-of-type(3) #gallery .mix .card {

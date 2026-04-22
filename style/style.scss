@@ -782,8 +782,11 @@ section {
         background-color: $primary;
         color: #fff;
         height: 100%;
-        width: 110px;
-        width: 70px;
+        width: 150px;
+        white-space: nowrap;
+        justify-content: flex-start;
+        padding-left: 6px;
+        overflow: hidden;
       }
 
       &.secondary {

@@ -938,6 +938,24 @@ section {
 
         &:nth-child(13) {
           .card {
+            background: url('../img/thumb-founderkit.png') center center/cover;
+          }
+        }
+
+        &:nth-child(14) {
+          .card {
+            background: url('../img/thumb-spms.png') center center/cover;
+          }
+        }
+
+        &:nth-child(15) {
+          .card {
+            background: url('../img/thumb-leadmio.png') center center/cover;
+          }
+        }
+
+        &:nth-child(16) {
+          .card {
             background: #ffffff url('../img/thumb-dronai.png') center center/60% no-repeat;
           }
         }
